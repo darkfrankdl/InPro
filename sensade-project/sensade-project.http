@@ -1,0 +1,75 @@
+@sensade_project_HostAddress = http://localhost:5090
+
+### GET all parking spaces
+GET {{sensade_project_HostAddress}}/api/parkingspace/spaces
+Accept: application/json
+
+### GET a single parking space by ID
+GET {{sensade_project_HostAddress}}/api/parkingspace/12
+Accept: application/json
+
+### POST a new parking space
+POST {{sensade_project_HostAddress}}/api/parkingspace
+Content-Type: application/json
+
+{
+  "status": "free",
+  "spaceNumber": "11",
+  "areaID": 3
+}
+
+### PUT to update an existing parking space
+PUT {{sensade_project_HostAddress}}/api/parkingspace/12
+Content-Type: application/json
+
+{
+  "spaceID": 12,
+  "status": "occupied",
+  "spaceNumber": "10",
+  "areaID": 3
+}
+
+### DELETE an existing parking space
+DELETE {{sensade_project_HostAddress}}/api/parkingspace/12
+Accept: application/json
+
+
+
+### BELOW IS FOR AREAS
+
+### GET all parking areas
+GET {{sensade_project_HostAddress}}/api/parkingarea/areas
+Accept: application/json
+
+### GET a single parking area by ID
+GET {{sensade_project_HostAddress}}/api/parkingarea/2
+Accept: application/json
+
+### POST a new parking area
+POST {{sensade_project_HostAddress}}/api/parkingarea
+Content-Type: application/json
+
+{
+  "street": "123 Main St",
+  "city": "Some City",
+  "zipCode": 12345,
+  "latitude": 40.7128,
+  "longitude": -74.0060
+}
+
+### PUT to update an existing parking area
+PUT {{sensade_project_HostAddress}}/api/parkingarea/1
+Content-Type: application/json
+
+{
+  "areaID": 1,
+  "street": "456 Another St",
+  "city": "Another City",
+  "zipCode": 54321,
+  "latitude": 41.1234,
+  "longitude": -73.1234
+}
+
+### DELETE an existing parking area
+DELETE {{sensade_project_HostAddress}}/api/parkingarea/2
+Accept: application/json
